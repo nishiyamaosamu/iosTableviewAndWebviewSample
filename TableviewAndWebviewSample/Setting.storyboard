@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pOP-Wf-Wnf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9jR-TC-nnQ">
+            <objects>
+                <navigationController id="pOP-Wf-Wnf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rd9-Ir-7vS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oXS-zx-0W0" kind="relationship" relationship="rootViewController" id="zmx-PW-evB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Gd-Ft-DEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="149"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="DUf-eP-RL1">
+            <objects>
+                <viewController id="oXS-zx-0W0" customClass="SettingViewController" customModule="TableviewAndWebviewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A7j-VM-XEo"/>
+                        <viewControllerLayoutGuide type="bottom" id="p8W-zA-rLC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C6A-67-8wf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-fe-FsO">
+                                <rect key="frame" x="210" y="286" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="r2C-AQ-IX0"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="all"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectType:" destination="oXS-zx-0W0" eventType="valueChanged" id="OJh-6u-nx6"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ctr-fe-FsO" secondAttribute="centerY" id="kXe-SY-qAa"/>
+                            <constraint firstAttribute="centerX" secondItem="ctr-fe-FsO" secondAttribute="centerX" id="qvJ-V9-zgW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZbA-lZ-YbG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="aiT-14-5MQ">
+                            <connections>
+                                <action selector="close:" destination="oXS-zx-0W0" id="rP7-NO-HUM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="ctr-fe-FsO" id="CjQ-Hi-Ghm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKo-Ap-i4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="149"/>
+        </scene>
+    </scenes>
+</document>

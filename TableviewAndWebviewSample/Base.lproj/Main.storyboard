@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dpu-sE-QRZ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sample App-->
+        <scene sceneID="smT-aJ-OWW">
+            <objects>
+                <tableViewController id="Yjz-BI-rRL" customClass="MainViewController" customModule="TableviewAndWebviewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xog-1E-EOe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="cJr-bb-db4">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJr-bb-db4" id="bcq-df-Kh9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="As9-AG-FBs" kind="show" identifier="showWebview" id="cel-2H-WcP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Yjz-BI-rRL" id="ArQ-WY-svb"/>
+                            <outlet property="delegate" destination="Yjz-BI-rRL" id="egL-o7-vXE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sample App" id="x4B-We-R1s">
+                        <barButtonItem key="rightBarButtonItem" title="設定" id="X7P-hX-2dC">
+                            <connections>
+                                <action selector="showSetting:" destination="Yjz-BI-rRL" id="r9d-UK-lvq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5h-iE-TRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="537"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Cek-hM-A6U">
+            <objects>
+                <viewController id="As9-AG-FBs" customClass="WebViewController" customModule="TableviewAndWebviewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ber-7n-R8j"/>
+                        <viewControllerLayoutGuide type="bottom" id="tW4-58-Mss"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cRG-sM-4HZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhZ-JW-drg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EhZ-JW-drg" firstAttribute="leading" secondItem="cRG-sM-4HZ" secondAttribute="leadingMargin" constant="-16" id="BoG-PR-hYH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EhZ-JW-drg" secondAttribute="trailing" constant="-16" id="Vbh-SK-7Us"/>
+                            <constraint firstItem="tW4-58-Mss" firstAttribute="top" secondItem="EhZ-JW-drg" secondAttribute="bottom" id="WMN-Ik-He1"/>
+                            <constraint firstItem="EhZ-JW-drg" firstAttribute="top" secondItem="cRG-sM-4HZ" secondAttribute="topMargin" id="uJC-JB-vTU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="EhZ-JW-drg" id="IMj-ey-TCz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8t-py-cbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="551"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ejd-M5-WVG">
+            <objects>
+                <navigationController id="dpu-sE-QRZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWi-Gy-b7z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Yjz-BI-rRL" kind="relationship" relationship="rootViewController" id="O5P-3q-OGs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xq-xs-hZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224" y="537"/>
+        </scene>
+    </scenes>
+</document>
